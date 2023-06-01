@@ -16,4 +16,4 @@ ENV STEPS=1000
 
 ENV PYTHONPATH=/.
 RUN chmod a+x /run.sh
-CMD /run.sh $STEPS $STOP
+CMD /bin/bash -c "source /run.sh $STEPS $STOP"
