@@ -15,5 +15,6 @@ ENV STOP=true
 ENV STEPS=1000
 
 ENV PYTHONPATH=/.
+RUN sed -i 's/\r$//' /run.sh
 RUN chmod a+x /run.sh
 CMD /bin/bash -c "source /run.sh $STEPS $STOP"
