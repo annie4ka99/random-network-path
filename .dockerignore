@@ -1,2 +1,4 @@
-test.ipynb
+notebooks/
 __pycache__
+logs
+logs/*

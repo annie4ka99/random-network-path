@@ -1,15 +1,19 @@
 FROM python:3.9
 
-COPY . /network-api/
+COPY . .
 
-ENV VIRTUAL_ENV=/network-api/venv
+ENV VIRTUAL_ENV=/venv
+
 RUN python3 -m venv $VIRTUAL_ENV
 ENV PATH="$VIRTUAL_ENV/bin:$PATH"
 
-RUN pip install -r /network-api/requirements.txt
+RUN pip install -r /requirements.txt
 
-WORKDIR /network-api/
+WORKDIR /.
 
-EXPOSE 8080
+ENV STOP=true
+ENV STEPS=1000
 
-CMD [ "python", "/network-api/network_application.py", "--input=input.txt", "--log=env.log", "--seed=0", "--host=0.0.0.0", "--port=8080" ]
+ENV PYTHONPATH=/.
+RUN chmod a+x /run.sh
+CMD /run.sh $STEPS $STOP
