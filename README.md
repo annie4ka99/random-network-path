@@ -1,3 +1,8 @@
+## Description
+Implementation of Shortest Path search in random graph with Multi-Armed Bandits + Thompson sampling.\
+A random lognormal value with unknown parameters is specified for each edge. The distribution parameters are different among edges.\
+The agent must find the shortest path in a minimum number of attempts.
+
 ## Input format
 Put graph parameters into [input/input.txt](input/input.txt) in the following format:
 ```
